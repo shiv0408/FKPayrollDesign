@@ -23,6 +23,9 @@ public abstract class Employee{
 	public Employee(String name, String email, paymentMethod method){
 		this(name, email, method, 0.0);
 	}
+	public int getID(){
+		return this.ID;
+	}
 	public double getGrossSales(){
 		return this.grossSales;
 	}
