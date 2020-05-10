@@ -21,9 +21,10 @@ public class HourlyEmployee extends Employee{
 	public void setHourlyRate(double rate){
 		this.hourlyRate = (rate > 0.0) ? rate : 0.0;
 	}
-	public void setHoursToday(double hours){
-		Date today = Calendar.getInstance().getTime();
-		weeklyHours[today.getDay()-1] = hours;
+	public void setHoursOfDay(double hours, int dayOfWeek){
+		if(dayOfWeek>=0 && dayOfWeek<5){
+			weeklyHours[dayOfWeek] = hours;
+		}
 	}
 	@Override
 	public double makeSalaryPayment(Date date){

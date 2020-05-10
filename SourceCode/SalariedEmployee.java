@@ -26,6 +26,9 @@ class SalariedEmployee extends Employee{
 		if(isFriday && isLastDay){
 			double grossSalary = this.monthlySalary + this.getGrossSales()*this.getCommisionRate();
 			grossSalary -= this.arrears;
+			if(this.getUnionMember()){
+				grossSalary -= this.getMembershipFee();
+			}
 			this.setGrossSales(0.0);
 			this.arrears = 0.0;
 			return grossSalary;
