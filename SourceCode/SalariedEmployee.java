@@ -22,7 +22,7 @@ class SalariedEmployee extends Employee{
 	public double makeSalaryPayment(Date date){
 		boolean isFriday, isLastDay;
 		isFriday = date.getDay()==5;
-		isLastDay = date.getDate()==YearMonth.of(date.getYear(), date.getMonth()).lengthOfMonth();
+		isLastDay = date.getDate()==YearMonth.of(date.getYear(), date.getMonth()+1).lengthOfMonth();
 		if(isFriday && isLastDay){
 			double grossSalary = this.monthlySalary + this.getGrossSales()*this.getCommisionRate();
 			grossSalary -= this.arrears;

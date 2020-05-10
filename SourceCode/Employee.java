@@ -18,6 +18,7 @@ public abstract class Employee{
 		this.name = name;
 		this.email = email;
 		this.method = method;
+		this.commisionRate = commisionRate;
 	}
 	public Employee(String name, String email, paymentMethod method){
 		this(name, email, method, 0.0);
